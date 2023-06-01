@@ -1,4 +1,4 @@
-/* * {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -27,6 +27,7 @@ a {
   font-size: 16px;
   line-height: 25px;
   background-color: var(--crystal-text);
+  color: var(--color-bg);
   padding: 0.4rem 1rem;
   border: 1px solid var(--crystal-text);
   border-radius: 5px;
@@ -108,4 +109,4 @@ a {
   .section_margin {
     margin: 2rem 2rem;
   }
-} */
+}

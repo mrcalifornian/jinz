@@ -1,0 +1,44 @@
+.jinz__footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.jinz__footer-links {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.jinz__footer-links__legal p,
+.jinz__footer-links__social p {
+  font-size: 20px;
+  line-height: 25px;
+  margin: 0.5rem 0;
+}
+
+.jinz__footer-made__by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jinz__footer-made__by p {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 1050px) {
+  .jinz__footer-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .jinz__footer-made__by p,
+  .jinz__footer-links__legal p,
+  .jinz__footer-links__social p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

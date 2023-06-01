@@ -1,0 +1,269 @@
+.jinz__history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  max-height: 100%;
+}
+
+.jinz__history-search {
+  padding: 1rem;
+  flex-grow: 0;
+  min-height: 10vh;
+  width: 100%;
+}
+
+.jinz__history-search button {
+  display: flex;
+  font-size: 20px;
+  line-height: 30px;
+  width: 100%;
+  padding: 1rem;
+  border: 0.05rem solid var(--crystal-text);
+  border-radius: 5px;
+  background: var(--color-grey);
+  color: var(--crystal-text);
+  text-align: left;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jinz__history-search button:hover {
+  background: var(--color-bg);
+}
+
+.jinz__history-search button p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.jinz__history-history {
+  padding: 1rem;
+  flex-grow: 1;
+  width: 100%;
+  border-bottom: 0.5px solid var(--crystal-text);
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.jinz__history-history::-webkit-scrollbar {
+  display: none;
+}
+
+.jinz__history-history_box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.jinz__history-history_box:hover {
+  background: var(--color-grey);
+}
+
+.jinz__history-history_box h4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.jinz__history-history_box p {
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0.5rem 0 0;
+}
+
+.jinz__history-history_box button {
+  background: #323233;
+  border: 0.5px solid transparent;
+  border-radius: 5px;
+  color: var(--crystal-text);
+  padding: 0.3rem 0.7rem 0.2rem;
+  margin: 0.5rem 0.5rem 0;
+  cursor: pointer;
+}
+
+.jinz__history-history_box button:hover {
+  background: transparent;
+}
+.jinz__history-history_box button:hover::after {
+  position: absolute;
+  margin-top: 2rem;
+  margin-left: -1.5rem;
+  padding: 3px;
+  background: var(--crystal-text);
+  color: var(--color-bg);
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.pencil:hover::after {
+  content: "Edit";
+}
+.clipboard:hover::after {
+  content: "Copy";
+}
+.trash:hover::after {
+  content: "Delete";
+}
+
+.jinz__history-history_box-buttons {
+  display: none;
+}
+
+.active-search {
+  background: var(--color-grey);
+}
+
+.active {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.jinz__history-info {
+  padding: 1rem 1rem 0;
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+}
+
+.jinz__history-info__profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: min-content;
+}
+
+.jinz__history-info__profile img {
+  height: 2rem;
+  border-radius: 5px;
+}
+
+.jinz__history-info__profile h3 {
+  width: 100%;
+  padding: 0 0.5rem;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.jinz__history-info__profile button {
+  background: transparent;
+  color: var(--crystal-text);
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.jinz__history-info__button {
+  background: var(--color-grey);
+  color: var(--crystal-text);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.jinz__history-info__button:hover {
+  background: #1e002f;
+}
+
+@media screen and (max-width: 1350px) {
+  .jinz__history {
+    height: 97vh;
+  }
+
+  .jinz__history-info {
+    max-height: 15vh;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .jinz__history {
+    height: 96vh;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .jinz__history {
+    height: 95vh;
+  }
+  .jinz__history-info {
+    max-height: 16vh;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .jinz__history {
+    height: 94vh;
+    justify-content: flex-start;
+  }
+
+  .jinz__history-search button {
+    padding: 0.5rem;
+  }
+
+  .jinz__history-search button p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .jinz__history-history {
+    padding-top: 0.5rem;
+    flex-grow: 1;
+  }
+
+  .jinz__history-history_box {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .jinz__history-history_box h4 {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  .jinz__history-history_box p {
+    font-size: 10px;
+    line-height: 15px;
+    margin: 0.5rem 0 0;
+  }
+
+  .jinz__history-history_box button {
+    padding: 0.2rem 0.3rem 0.1rem;
+    margin: 0.3rem 0.1rem 0.1rem;
+  }
+
+  .jinz__history-info {
+    min-height: 16vh;
+  }
+
+  .jinz__history-info__profile img {
+    height: 1.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .jinz__history-info__profile h3 {
+    padding: 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .jinz__history-info__profile button {
+    font-size: 16px;
+  }
+
+  .jinz__history-info__button {
+    font-size: 10px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}

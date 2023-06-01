@@ -1,0 +1,63 @@
+.jinz__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jinz__navbar h1 {
+  font-size: 25px;
+}
+
+.jinz__navbar-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jinz__navbar-links p {
+  font-size: 16px;
+  line-height: 25px;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.jinz__navbar-links a {
+  margin: 0 1rem;
+}
+
+.jinz__navbar-menu {
+  margin-left: 1rem;
+  display: none;
+  position: relative;
+}
+
+.jinz__navbar-menu__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  text-align: end;
+  padding: 1rem;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 100px;
+}
+
+.jinz__navbar-menu__container p {
+  margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 1050px) {
+  .jinz__navbar-links {
+    display: none;
+  }
+
+  .jinz__navbar-menu {
+    display: flex;
+  }
+}

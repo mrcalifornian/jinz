@@ -1,0 +1,55 @@
+.jinz__brands {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.jinz__brands p {
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.04rem;
+  margin: 1rem 0;
+}
+
+.jinz__brands-images {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jinz__brands-images div {
+  flex: 1;
+  max-width: 150px;
+  min-width: 120px;
+  margin: 1rem 0 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1050px) {
+  .jinz__brands-images {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .jinz__brands p {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.04rem;
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .jinz__brands-images {
+    justify-content: center;
+  }
+}
