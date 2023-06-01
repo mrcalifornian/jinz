@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6314d8e4.css",
+    "main.js": "/static/js/main.2538ce19.js",
+    "static/media/frame.gif": "/static/media/frame.d0717641d876fe069a89.gif",
+    "static/media/profile.jpg": "/static/media/profile.5268ca6365684bf9b66b.jpg",
+    "static/media/jinz-black.png": "/static/media/jinz-black.f7a015c4a41bf7b918fc.png",
+    "static/media/jinz.png": "/static/media/jinz.d5e9f13c9f30df30dc6e.png",
+    "index.html": "/index.html",
+    "main.6314d8e4.css.map": "/static/css/main.6314d8e4.css.map",
+    "main.2538ce19.js.map": "/static/js/main.2538ce19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6314d8e4.css",
+    "static/js/main.2538ce19.js"
+  ]
+}
