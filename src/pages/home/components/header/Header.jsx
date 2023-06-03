@@ -1,5 +1,5 @@
 import React from "react";
-import frame from "../../assets/frame.gif";
+import frame from "../../../../assets/frame.gif";
 import "./header.css";
 
 const Header = () => {

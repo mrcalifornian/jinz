@@ -1,17 +1,8 @@
 import React from "react";
-import atlassian from "../../assets/atlassian.png";
-import dropbox from "../../assets/dropbox.png";
-import slack from "../../assets/slack.png";
+import atlassian from "../../../../assets/atlassian.png";
+import dropbox from "../../../../assets/dropbox.png";
+import slack from "../../../../assets/slack.png";
 import "./brand.css";
-
-// const brandsList = [atlassian, google, dropbox, slack,shopify]
-
-// const brands = () =>{
-//   for (let i = 0; i<5; i++){
-
-//   }
-//   return
-// }
 
 const Brand = () => {
   return (

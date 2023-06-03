@@ -34,7 +34,7 @@ a {
 }
 
 .app_result {
-  flex: 0.2;
+  flex: 0.25;
 }
 
 .prompt-example {
@@ -49,17 +49,25 @@ a {
   text-align: left;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1050px) {
   .app_history {
-    display: none;
-    width: 0px;
+    flex: 0.25;
   }
 
   .app_chat {
-    flex: 1;
+    flex: 0.5;
   }
 
   .app_result {
+    flex: 0.3;
+  }
+}
+@media screen and (max-width: 650px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .app_history {
     display: none;
   }
 }

@@ -69,6 +69,11 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
+  display: block;
+  max-width: 15ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .jinz__history-history_box p {
@@ -127,7 +132,7 @@
 
 .jinz__history-info {
   padding: 1rem 1rem 0;
-  height: 20vh;
+  height: min-content;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -177,35 +182,7 @@
   background: #1e002f;
 }
 
-@media screen and (max-width: 1350px) {
-  .jinz__history {
-    height: 97vh;
-  }
-
-  .jinz__history-info {
-    max-height: 15vh;
-  }
-}
-@media screen and (max-width: 1250px) {
-  .jinz__history {
-    height: 96vh;
-  }
-}
-@media screen and (max-width: 1150px) {
-  .jinz__history {
-    height: 95vh;
-  }
-  .jinz__history-info {
-    max-height: 16vh;
-  }
-}
-
 @media screen and (max-width: 1050px) {
-  .jinz__history {
-    height: 94vh;
-    justify-content: flex-start;
-  }
-
   .jinz__history-search button {
     padding: 0.5rem;
   }
@@ -240,10 +217,6 @@
   .jinz__history-history_box button {
     padding: 0.2rem 0.3rem 0.1rem;
     margin: 0.3rem 0.1rem 0.1rem;
-  }
-
-  .jinz__history-info {
-    min-height: 16vh;
   }
 
   .jinz__history-info__profile img {

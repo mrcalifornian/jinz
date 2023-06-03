@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  padding: 1rem 1rem 0;
 }
 
 .jinz__result-empty {
@@ -66,6 +67,15 @@
   width: 100%;
 }
 
+.jinz__result-results__all {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.jinz__result-results__all::-webkit-scrollbar {
+  display: none;
+}
+
 .jinz__result-results__profile {
   display: flex;
   flex-direction: row;
@@ -79,6 +89,10 @@
   background: var(--color-grey);
 }
 
+.jinz__result-results__profile-name {
+  width: 40%;
+}
+
 .jinz__result-results__profile-name p {
   font-size: 13px;
   text-align: left;
@@ -87,13 +101,18 @@
 .jinz__result-results__profile-data {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  width: 65%;
 }
 
 .jinz__result-results__profile-data img {
-  height: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: #fff;
+  border-radius: 50%;
   margin-right: 0.5rem;
+  object-fit: scale-down;
 }
 
 .jinz__result-results__profile-data__text h5 {
@@ -102,4 +121,11 @@
 
 .jinz__result-results__profile-data__text p {
   font-size: 12px;
+}
+
+@media screen and (max-width: 650px) {
+  .jinz__result {
+    height: max-content;
+    padding: 2rem 3rem;
+  }
 }
