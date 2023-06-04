@@ -7,10 +7,17 @@ import "./chat.css";
 
 const Chat = (props) => {
   const containerRef = useRef(null);
+  const [shouldScrollToBottom, setShouldScrollToBottom] = useState(true);
 
   useEffect(() => {
-    containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    if (shouldScrollToBottom) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
   });
+
+  const handleItemClick = () => {
+    setShouldScrollToBottom(false);
+  };
 
   const readyQueries = [
     "Senior software engineer with 5+ years of experience",
@@ -31,6 +38,7 @@ const Chat = (props) => {
 
     setNewQuery("");
     props.onNewQuery(newQuery);
+    setShouldScrollToBottom(true);
   };
 
   return (
@@ -91,6 +99,7 @@ const Chat = (props) => {
                           className="jinz__chat-main__response-box__buttons-query"
                           onClick={() => {
                             props.onResultChange(chat.id);
+                            handleItemClick();
                           }}
                         >
                           <a href="#result">Run Query</a>
