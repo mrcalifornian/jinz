@@ -18,6 +18,12 @@ const JinzChat = () => {
 
   let [activeResult, setActiveResult] = useState("");
 
+  const setActiveR = async (id) => {
+    setTimeout(() => {
+      setActiveResult(id);
+    }, 200);
+  };
+
   let results = activeChat.chat.find((chat) => chat.id === activeResult);
 
   const addNewSearch = () => {
@@ -30,9 +36,10 @@ const JinzChat = () => {
     };
     changeData([newSearch, ...data]);
     setActiveSearch(id);
+    setActiveResult("");
   };
 
-  const addNewChat = (query) => {
+  const addNewChat = async (query) => {
     let profs = genRandomProfiles();
     const updatedData = data.map((item) => {
       if (item.searchId === activeSearch) {
@@ -54,7 +61,9 @@ const JinzChat = () => {
       }
       return item;
     });
-    changeData(updatedData);
+    setTimeout(() => {
+      changeData(updatedData);
+    }, 300);
   };
 
   return (
@@ -67,11 +76,11 @@ const JinzChat = () => {
           onNewSearch={addNewSearch}
         />
       </div>
-      <hr />
+      <hr className="second-hr" />
       <div className="app_chat">
         <Chat
           chat={activeChat.chat}
-          onResultChange={setActiveResult}
+          onResultChange={setActiveR}
           onNewQuery={addNewChat}
         />
       </div>

@@ -158,9 +158,12 @@
 }
 
 @media screen and (max-width: 650px) {
+  .jinz__chat {
+    height: 92vh;
+  }
+
   .jinz__chat-input {
-    height: max-content;
-    padding: 1rem 3rem 2rem;
-    background: transparent;
+    height: 13vh;
+    padding: 1rem 3rem;
   }
 }

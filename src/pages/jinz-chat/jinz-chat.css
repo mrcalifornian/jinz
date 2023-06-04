@@ -39,14 +39,18 @@ a {
 
 .prompt-example {
   padding: 0.5rem;
-  border-radius: 5px;
-  border: 0.5px solid var(--color-border);
+  border-radius: 10px;
+  border: 0.5px solid var(--crystal-text);
   margin-right: 0.5rem;
   margin-top: 0.5rem;
-  background: var(--color-pink);
+  background: var(--color-bg);
   color: var(--crystal-text);
   cursor: pointer;
   text-align: left;
+}
+
+.prompt-example:hover {
+  background: var(--color-pink);
 }
 
 @media screen and (max-width: 1050px) {
@@ -68,6 +72,10 @@ a {
   }
 
   .app_history {
+    display: none;
+  }
+
+  .second-hr {
     display: none;
   }
 }

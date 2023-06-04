@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { BiSend } from "react-icons/bi";
 import { BsStars } from "react-icons/bs";
 import profile from "../../../../assets/profile.jpg";
@@ -6,6 +6,12 @@ import jinz from "../../../../assets/jinz.png";
 import "./chat.css";
 
 const Chat = (props) => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    containerRef.current.scrollTop = containerRef.current.scrollHeight;
+  });
+
   const readyQueries = [
     "Senior software engineer with 5+ years of experience",
     " Middle+ NodeJS engineer in Kyoto",
@@ -32,7 +38,7 @@ const Chat = (props) => {
       <div className="jinz__chat-header">
         <h3>Welcome to JinzAI</h3>
       </div>
-      <div className="jinz__chat-main">
+      <div className="jinz__chat-main" ref={containerRef}>
         {/* Welcome text */}
         {chat.length === 0 ? (
           <div className="jinz__chat-main__welcome">
