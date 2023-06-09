@@ -61,6 +61,7 @@ const Chat = (props) => {
               you looking for today? <br />
               <br /> Enter your own query in the text box, or try a sample query
               for free (no credits).
+              <br />
               {readyQueries.map((q) => {
                 return (
                   <button
@@ -86,11 +87,17 @@ const Chat = (props) => {
                 </div>
                 <div className="jinz__chat-main__response">
                   <img src={jinz} alt="user" />
-                  {chat.response.matched >= 1 ? (
+                  {chat.response.matched === undefined ? (
+                    <div>
+                      <p>Generating response...</p>
+                    </div>
+                  ) : chat.response.matched >= 1 ? (
                     <div>
                       <p>
                         Success! <br /> <br /> I found {chat.response.matched}{" "}
-                        matching profiles for your search!
+                        matching{" "}
+                        {chat.response.matched === 1 ? "profile" : "profiles"}{" "}
+                        for your search!
                         <br /> <br /> They will appear on the left side of the
                         screen once you press the run query button!
                       </p>
