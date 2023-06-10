@@ -86,7 +86,7 @@ const JinzChat = () => {
     changeData(updatedData(id, [], undefined));
 
     try {
-      let res = await fetch("https://jinz-backend.onrender.com/profiles", {
+      let response = await fetch("https://jinz-backend.onrender.com/profiles", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,8 +96,13 @@ const JinzChat = () => {
         }),
       });
 
-      const profs = await res.json();
-      changeData(updatedData(id, profs, profs.length));
+      const res = await response.json();
+      if (response.status !== 200) {
+        const error = new Error(res.message);
+        throw error;
+      }
+
+      changeData(updatedData(id, res.data, res.data.length));
     } catch (error) {
       changeData(updatedData(id, [], 0));
     }

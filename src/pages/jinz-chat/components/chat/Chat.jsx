@@ -80,8 +80,8 @@ const Chat = (props) => {
         ) : (
           chat.map((chat) => {
             return (
-              <>
-                <div className="jinz__chat-main__query" key={chat.id}>
+              <div key={chat.id}>
+                <div className="jinz__chat-main__query">
                   <img src={profile} alt="user" />
                   <p>{chat.query}</p>
                 </div>
@@ -120,7 +120,7 @@ const Chat = (props) => {
                     </p>
                   )}
                 </div>
-              </>
+              </div>
             );
           })
         )}
