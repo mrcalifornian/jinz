@@ -22,11 +22,7 @@
   line-height: 25px;
   letter-spacing: -0.04rem;
   margin-top: 1.5rem;
-}
-
-.jinz__header-content button {
-  margin-top: 1.5rem;
-  margin-right: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .jinz__header-image {

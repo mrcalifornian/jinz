@@ -14,9 +14,9 @@ const Header = () => {
           the capabilities they need to thrive.
         </p>
         <div className="jinz__header-content__buttons">
-          <button className="req-button" type="button">
+          <a href="/" className="req-button">
             Request Demo
-          </button>
+          </a>
           <a href="/chat" className="try-button">
             Try JinzAI
           </a>
