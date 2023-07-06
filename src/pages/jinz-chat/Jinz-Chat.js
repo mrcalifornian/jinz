@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { History, Chat, Result } from "./components";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { History, Chat } from "./components";
 import "./jinz-chat.css";
+import ResPro from "./components/respro/ResPro";
 
 const JinzChat = () => {
   const getCurrentDate = () => {
@@ -14,23 +14,49 @@ const JinzChat = () => {
     return Math.random().toString(36).substring(2, 9);
   };
 
+  // All data
   let [data, changeData] = useState([
     {
-      searchId: "s1",
+      searchId: generateUniqueId(),
       search: "New Search",
       date: getCurrentDate(),
       chat: [],
     },
   ]);
 
+  // Search results currently showing
   let [activeSearch, setActiveSearch] = useState(data[0].searchId);
 
   let activeChat = data.find((search) => search.searchId === activeSearch);
 
   let [activeResult, setActiveResult] = useState("");
 
+  // Logic for profile vs results window
+  const [page, setPage] = useState(0);
+  const [activeProfile, setActiveProfile] = useState("");
+
+  const changeToProfile = (data) => {
+    setActiveProfile(data);
+    setPage(1);
+  };
+
+  const changeToResult = () => {
+    setActiveProfile("");
+    setPage(0);
+  };
+
+  // Results stored on local storage
+  useEffect(() => {
+    const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
+
+    if (dataFromLocalStorage) {
+      changeData([...data, ...dataFromLocalStorage]);
+    }
+  }, []);
+
   const setActiveR = async (id) => {
     setActiveResult(id);
+    changeToResult();
   };
 
   let results = activeChat.chat.find((chat) => chat.id === activeResult);
@@ -84,7 +110,7 @@ const JinzChat = () => {
     };
 
     changeData(updatedData(id, [], undefined));
-
+    let updatedDataWithNewChat;
     try {
       let response = await fetch("https://jinz-backend.onrender.com/profiles", {
         method: "POST",
@@ -102,10 +128,16 @@ const JinzChat = () => {
         throw error;
       }
 
-      changeData(updatedData(id, res.data, res.data.length));
+      updatedDataWithNewChat = updatedData(id, res.data, res.data.length);
+
+      changeData(updatedDataWithNewChat);
     } catch (error) {
-      changeData(updatedData(id, [], 0));
+      updatedDataWithNewChat = updatedData(id, [], 0);
     }
+
+    // update all data
+    changeData(updatedDataWithNewChat);
+    localStorage.setItem("data", JSON.stringify(updatedDataWithNewChat));
   };
 
   return (
@@ -128,7 +160,13 @@ const JinzChat = () => {
       </div>
       <hr />
       <div className="app_result">
-        <Result results={results} />
+        <ResPro
+          results={results}
+          page={page}
+          activeProfile={activeProfile}
+          changeToProfile={changeToProfile}
+          changeToResult={changeToResult}
+        />
       </div>
     </div>
   );

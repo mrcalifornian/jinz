@@ -90,7 +90,7 @@
 }
 
 .jinz__result-results__profile-name {
-  width: 40%;
+  width: 50%;
 }
 
 .jinz__result-results__profile-name p {
@@ -103,7 +103,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 65%;
+  width: 50%;
 }
 
 .jinz__result-results__profile-data img {

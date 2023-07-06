@@ -1,8 +1,8 @@
 import React from "react";
 import jinzBlack from "../../../../assets/jinz-black.png";
-import linkedIn from "../../../../assets/in.png";
 import { BiSearchAlt2 } from "react-icons/bi";
 import "./result.css";
+import { stringPrettify } from "../../../utils/strings";
 
 const Result = (props) => {
   let profiles = props.results;
@@ -32,21 +32,20 @@ const Result = (props) => {
           <div className="jinz__result-results__all">
             {profiles.profiles.map((profile) => {
               return (
-                <div className="jinz__result-results__profile" key={profile.id}>
+                <div
+                  className="jinz__result-results__profile"
+                  key={profile.id}
+                  onClick={() => {
+                    props.selectProfile(profile);
+                  }}
+                >
                   <div className="jinz__result-results__profile-name">
-                    <p>{profile.full_name}</p>
+                    <p>{stringPrettify(profile.full_name)}</p>
                   </div>
                   <div className="jinz__result-results__profile-data">
-                    <a
-                      href={`https://${profile.linkedin_url}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img src={linkedIn} alt="LinkedIn" />
-                    </a>
                     <div className="jinz__result-results__profile-data__text">
-                      <h5>{profile.job_company_name}</h5>
-                      <p>{profile.job_title}</p>
+                      <h5>{stringPrettify(profile.job_company_name)}</h5>
+                      <p>{stringPrettify(profile.job_title)}</p>
                     </div>
                   </div>
                 </div>
