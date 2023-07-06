@@ -44,8 +44,8 @@ const Result = (props) => {
                   </div>
                   <div className="jinz__result-results__profile-data">
                     <div className="jinz__result-results__profile-data__text">
-                      <h5>{stringPrettify(profile.job_company_name)}</h5>
-                      <p>{stringPrettify(profile.job_title)}</p>
+                      <h5>{stringPrettify(profile.job_company_name) || ""}</h5>
+                      <p>{stringPrettify(profile.job_title) || ""}</p>
                     </div>
                   </div>
                 </div>

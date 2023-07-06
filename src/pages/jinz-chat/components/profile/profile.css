@@ -14,6 +14,8 @@ a:hover {
 
 .back:hover {
   cursor: pointer;
+  background-color: var(--color-bg);
+  border-color: var(--crystal-text);
 }
 
 .jinz__profile {
