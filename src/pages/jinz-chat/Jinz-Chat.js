@@ -50,7 +50,8 @@ const JinzChat = () => {
     const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
 
     if (dataFromLocalStorage) {
-      changeData([...data, ...dataFromLocalStorage]);
+      changeData((data) => [...data, ...dataFromLocalStorage]);
+      console.log(dataFromLocalStorage);
     }
   }, []);
 

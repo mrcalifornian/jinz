@@ -64,17 +64,17 @@ const Profile = (props) => {
             return (
               <div
                 className="jinz__profile-experience-company"
-                key={company.company}
+                key={company.company?.id || ""}
               >
                 <p className="jinz__profile-text-main">
-                  {`${stringPrettify(company.title.name)}`}
+                  {`${stringPrettify(company.title.name) || ""}`}
                   {" - "}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href={`https:${company.company.website}`}
                   >
-                    {stringPrettify(company.company.name)}
+                    {stringPrettify(company.company.name) || ""}
                   </a>
                 </p>
                 <p className="jinz__profile-text-secondary">{`${
@@ -99,16 +99,16 @@ const Profile = (props) => {
             return (
               <div
                 className="jinz__profile-education__school"
-                key={school.school.id}
+                key={school.school?.id || ""}
               >
                 <p className="jinz__profile-text-main">
-                  {stringPrettify(school.school.name)}
+                  {stringPrettify(school.school?.name || "")}
                 </p>
                 <p className="jinz__profile-text-secondary">{`${
                   school.start_date || ""
                 }  ${school.end_date ? "to " + school.end_date : ""}`}</p>
                 <p className="jinz__profile-text-secondary">
-                  {school.school.location?.name
+                  {school.school?.location?.name
                     ? stringPrettify(school.school.location?.name)
                     : ""}
                 </p>

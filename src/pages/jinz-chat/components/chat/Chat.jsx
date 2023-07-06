@@ -21,7 +21,7 @@ const Chat = (props) => {
 
   const readyQueries = [
     "Senior software engineer with 5+ years of experience",
-    " Middle+ NodeJS engineer in Kyoto",
+    "Middle NodeJS engineer in Kyoto",
     "Senior Frontend Engineer ReactJS",
   ];
 
